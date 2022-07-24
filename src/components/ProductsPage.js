@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import { ProductGrid, ProductGridItem, SizedImage } from "./StyledComponents";
+import ProductCard from "./ProductCard";
 
 export default function ProductsPage() {
   const [productList, setProductList] = useState([]);
@@ -19,15 +21,20 @@ export default function ProductsPage() {
   }, []);
   return (
     <>
-      {productList ? (
-        productList.map((product, index) => (
-          <div key={index}>
-            <div>{product.title}</div>
-          </div>
-        ))
-      ) : (
-        <div>No products found.</div>
-      )}
+      <ProductGrid>
+        {productList ? (
+          productList.map((product, index) => (
+            <div key={index}>
+              <ProductCard
+               image = {product.image}
+               price = {product.price}
+               title = {product.title} />
+            </div>
+          ))
+        ) : (
+          <div>No products found.</div>
+        )}
+      </ProductGrid>
     </>
   );
 }
