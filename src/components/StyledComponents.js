@@ -1,5 +1,10 @@
 import styled from "styled-components";
 
+export const InputLabel = styled.label`
+font-size: 1.2rem;
+margin-right: 10px;
+`;
+
 export const LargeImage = styled.img`
 width: 100%;
 @media (min-width: 700px) {
@@ -29,6 +34,19 @@ export const ProductText = styled.div`
 width: 90vw;
 @media (min-width: 700px) {
     width: 45vw;
+}
+`;
+
+export const QuantityInput = styled.input`
+width: 60px;
+font-size: 1.2rem;
+${(props) => props.dark
+  ? `border: 1px solid white;
+    background-color: black;
+    color: white;`
+  : `border: 1px solid black;
+    background-color: white;
+    color: black;`
 }
 `;
 

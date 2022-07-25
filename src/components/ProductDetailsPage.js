@@ -1,9 +1,11 @@
 import { useContext, useEffect, useState } from "react";
 import { ThemeContext } from "../contexts/ThemeContext";
 import {
+  InputLabel,
   LargeImage,
   ProductGrid,
   ProductText,
+  QuantityInput,
   SpacedText,
   SubmitButton,
   Title,
@@ -14,6 +16,7 @@ export default function ProductDetailsPage(props) {
   const { id } = props;
   const [isLoading, setIsLoading] = useState(false);
   const [productInfo, setProductInfo] = useState([]);
+  const [chosenQuantity, setChosenQuantity] = useState(1);
   const { theme } = useContext(ThemeContext);
 
   // fetch product information
@@ -42,6 +45,16 @@ export default function ProductDetailsPage(props) {
             <SpacedText>{productInfo.description}</SpacedText>
             <SpacedText>${productInfo.price}</SpacedText>
             <SpacedText>(Category: {productInfo.category})</SpacedText>
+            <SpacedText>
+              <InputLabel htmlFor="quantity">Quantity:</InputLabel>
+              <QuantityInput name="quantity"
+                type="number"
+                dark={theme === 'dark'}
+                min={1}
+                value={chosenQuantity}
+                onChange={(event) => setChosenQuantity(event.target.value)}
+              />
+            </SpacedText>    
             <SubmitButton dark={theme === 'dark'}>Add to Cart</SubmitButton>
           </ProductText>
           <div style={{ height: "90vh" }}>
