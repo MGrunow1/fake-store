@@ -8,6 +8,7 @@ import {
   SubmitButton,
   Title,
 } from "./StyledComponents";
+import Loading from "./Loading";
 
 export default function ProductDetailsPage(props) {
   const { id } = props;
@@ -30,6 +31,10 @@ export default function ProductDetailsPage(props) {
   
   return (
     <>
+    {isLoading ? (
+      <Loading />
+    ) : (
+    <>
       {productInfo && (
         <ProductGrid>
           <ProductText>
@@ -48,5 +53,7 @@ export default function ProductDetailsPage(props) {
         </ProductGrid>
       )}
     </>
+    )}
+  </>
   );
 }
