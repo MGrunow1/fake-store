@@ -3,6 +3,7 @@ import { ThemeContext } from "../contexts/ThemeContext";
 import {
   InputLabel,
   LargeImage,
+  LeftAlign,
   ProductGrid,
   ProductText,
   QuantityInput,
@@ -42,7 +43,7 @@ export default function ProductDetailsPage(props) {
         <ProductGrid>
           <ProductText>
             <Title>{productInfo.title}</Title>
-            <SpacedText>{productInfo.description}</SpacedText>
+            <LeftAlign>{productInfo.description}</LeftAlign>
             <SpacedText>${productInfo.price}</SpacedText>
             <SpacedText>(Category: {productInfo.category})</SpacedText>
             <SpacedText>

@@ -12,6 +12,11 @@ width: 100%;
 }
 `;
 
+export const LeftAlign = styled.div`
+margin-bottom: .5rem;
+text-align: left;
+`;
+
 export const ProductGrid = styled.div`
 display: flex;
 flex-wrap: wrap;
