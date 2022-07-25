@@ -1,9 +1,19 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { ThemeContext } from "../contexts/ThemeContext";
+import {
+  LargeImage,
+  ProductGrid,
+  ProductText,
+  SpacedText,
+  SubmitButton,
+  Title,
+} from "./StyledComponents";
 
 export default function ProductDetailsPage(props) {
   const { id } = props;
   const [isLoading, setIsLoading] = useState(false);
   const [productInfo, setProductInfo] = useState([]);
+  const { theme } = useContext(ThemeContext);
 
   // fetch product information
   useEffect(() => {
@@ -16,8 +26,27 @@ export default function ProductDetailsPage(props) {
       setIsLoading(false);
     }
     getProductInfo();
-  }, []);
+  }, [id]);
+  
   return (
-    <></>
-  )
+    <>
+      {productInfo && (
+        <ProductGrid>
+          <ProductText>
+            <Title>{productInfo.title}</Title>
+            <SpacedText>{productInfo.description}</SpacedText>
+            <SpacedText>${productInfo.price}</SpacedText>
+            <SpacedText>(Category: {productInfo.category})</SpacedText>
+            <SubmitButton dark={theme === 'dark'}>Add to Cart</SubmitButton>
+          </ProductText>
+          <div style={{ height: "90vh" }}>
+            <LargeImage
+              src={productInfo.image}
+              alt={`Image of ${productInfo.title}`}
+            />
+          </div>
+        </ProductGrid>
+      )}
+    </>
+  );
 }
