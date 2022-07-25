@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { ProductGrid, ProductGridItem, SizedImage } from "./StyledComponents";
+import Loading from "./Loading";
 import ProductCard from "./ProductCard";
 
 export default function ProductsPage() {
@@ -21,6 +22,9 @@ export default function ProductsPage() {
   }, []);
   return (
     <>
+      {isLoading ? (
+      <Loading />
+      ) : (
       <ProductGrid>
         {productList ? (
           productList.map((product, index) => (
@@ -35,6 +39,7 @@ export default function ProductsPage() {
           <div>No products found.</div>
         )}
       </ProductGrid>
+      )}
     </>
   );
 }
