@@ -23,15 +23,15 @@ export default function AddChoiceToCart(props) {
                 </ButtonTag>
                 <UndoButton
                   onClick={undoAddition}
-                  dark={theme === 'dark'}
-                  aria-label="Undo">
+                  dark={theme === 'dark'}>
+                    Undo&nbsp;
                     <FontAwesomeIcon icon={faRotateLeft} />
                 </UndoButton>
             </CenteredGroup>
             <CenteredGroup>
                 <PrimaryButton
                   dark={theme === 'dark'}>
-                      Checkout
+                      View Cart
                 </PrimaryButton>
                 <SecondaryButton dark={theme === 'dark'}>
                       Back to Product Page

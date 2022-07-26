@@ -45,6 +45,14 @@ margin-bottom: .5rem;
 text-align: left;
 `;
 
+export const NavContainer = styled.div`
+display: flex;
+${(props) => props.vertical
+  ? `flex-direction: column;`
+  : `flex-direction: row;`
+}
+`;
+
 export const PrimaryButton = styled.button`
 padding: 5px;
 margin: 5px;
