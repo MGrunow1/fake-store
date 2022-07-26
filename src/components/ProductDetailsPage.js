@@ -8,9 +8,9 @@ import {
   ProductText,
   QuantityInput,
   SpacedText,
-  SubmitButton,
   Title,
 } from "./StyledComponents";
+import AddChoiceToCart from "./AddChoiceToCart";
 import Loading from "./Loading";
 
 export default function ProductDetailsPage(props) {
@@ -55,8 +55,8 @@ export default function ProductDetailsPage(props) {
                 value={chosenQuantity}
                 onChange={(event) => setChosenQuantity(event.target.value)}
               />
-            </SpacedText>    
-            <SubmitButton dark={theme === 'dark'}>Add to Cart</SubmitButton>
+            </SpacedText>
+            <AddChoiceToCart />
           </ProductText>
           <div style={{ height: "90vh" }}>
             <LargeImage
