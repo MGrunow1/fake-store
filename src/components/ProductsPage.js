@@ -29,6 +29,7 @@ export default function ProductsPage() {
           productList.map((product, index) => (
             <div key={index}>
               <ProductCard
+              id = {product.id}
                image = {product.image}
                price = {product.price}
                title = {product.title} />

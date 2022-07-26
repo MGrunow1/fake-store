@@ -28,6 +28,20 @@ justify-content: center;
 margin-bottom: 3px;
 `;
 
+export const CenteredTitle = styled.div`
+text-align: center;
+margin-bottom: 20px;
+font-size: 2rem;
+@media (min-width: 400px) {
+  font-size: 3rem;
+  margin-bottom: 5px;
+}
+@media (min-width: 700px) {
+  font-size: 4rem;
+  margin-bottom: 0;
+}
+`;
+
 export const InputLabel = styled.label`
 font-size: 1.2rem;
 margin-right: 10px;
@@ -50,6 +64,17 @@ display: flex;
 ${(props) => props.vertical
   ? `flex-direction: column;`
   : `flex-direction: row;`
+}
+`;
+
+export const PageContainer = styled.div`
+display: flex;
+flex-direction: column;
+${(props) => props.dark
+  ? `background-color: black;
+    color: white;`
+  : `background-color: white;
+    color: black;`
 }
 `;
 
@@ -78,6 +103,7 @@ export const ProductGridItem = styled.div`
 width: 90vw;
 display: flex;
 flex-direction: column;
+align-items: center;
 margin-bottom: 30px;
 @media (min-width: 500px) {
     margin-left: 20px;

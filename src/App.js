@@ -8,6 +8,7 @@ import HeaderFooter from './components/HeaderFooter';
 import NotFound from './components/NotFound';
 import ProductsPage from './components/ProductsPage';
 import ProductDetailsPage from './components/ProductDetailsPage';
+import WelcomePage from './components/WelcomePage';
 
 function App() {
   return (
@@ -15,9 +16,12 @@ function App() {
       <CartProvider>
         <BrowserRouter>
           <Routes>
-            <Route path="/" element={<HeaderFooter />}>
-              <Route path='/products' element={<ProductsPage />}></Route>
-              <Route path='/:id' element={<ProductDetailsPage id={3} />} />
+            <Route path="/" element={<HeaderFooter /> }>
+              <Route index element={<WelcomePage />} />
+              <Route path='/products'>                
+                <Route path='/products/:id' element={<ProductDetailsPage />} />
+                <Route index element={<ProductsPage />} />
+              </Route>
               <Route path="/cart" element={<CartPage />} />
               <Route path='/checkout' element={<CheckoutPage />} />
               <Route path="*" element={<NotFound />} />

@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import { ThemeContext } from "../contexts/ThemeContext";
 import { CartContext } from "../contexts/CartContext";
+import { Link } from "react-router-dom";
 import { ButtonTag, CenteredGroup, PrimaryButton, SecondaryButton, UndoButton } from "./StyledComponents";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faRotateLeft } from '@fortawesome/free-solid-svg-icons';
@@ -37,13 +38,17 @@ export default function AddChoiceToCart(props) {
                 </UndoButton>
             </CenteredGroup>
             <CenteredGroup>
-                <PrimaryButton
-                  dark={theme === 'dark'}>
-                      View Cart
-                </PrimaryButton>
-                <SecondaryButton dark={theme === 'dark'}>
-                      Back to Product Page
-                </SecondaryButton>
+                <Link to="/cart">
+                    <PrimaryButton
+                     dark={theme === 'dark'}>
+                        View Cart
+                    </PrimaryButton>
+                </Link>
+                <Link to="/products">
+                    <SecondaryButton dark={theme === 'dark'}>
+                        Continue shopping
+                    </SecondaryButton>
+                </Link>
             </CenteredGroup>
             
             </>
@@ -55,9 +60,11 @@ export default function AddChoiceToCart(props) {
                   dark={theme === 'dark'}>
                     Add to Cart
                 </PrimaryButton>
-                <SecondaryButton dark={theme === 'dark'}>
-                    Back to Product Page
-                </SecondaryButton>
+                <Link to="/products">
+                    <SecondaryButton dark={theme === 'dark'}>
+                        Back to Product Page
+                    </SecondaryButton>
+                </Link>
             </CenteredGroup>
             </>
         )}
