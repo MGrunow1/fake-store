@@ -1,12 +1,11 @@
 import { useEffect, useState } from "react";
-import { ProductGrid, ProductGridItem, SizedImage } from "./StyledComponents";
+import { ProductGrid } from "./StyledComponents";
 import Loading from "./Loading";
 import ProductCard from "./ProductCard";
 
 export default function ProductsPage() {
   const [productList, setProductList] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  //TODO: actually use isLoading to display a loading spinner
 
   // fetch list of products
   useEffect(() => {
