@@ -18,8 +18,10 @@ function App() {
           <Routes>
             <Route path="/" element={<HeaderFooter /> }>
               <Route index element={<WelcomePage />} />
-              <Route path='/products' element={<ProductsPage />} />
-              <Route path='/:id' element={<ProductDetailsPage id={3} />} />
+              <Route path='/products'>                
+                <Route path='/products/:id' element={<ProductDetailsPage />} />
+                <Route index element={<ProductsPage />} />
+              </Route>
               <Route path="/cart" element={<CartPage />} />
               <Route path='/checkout' element={<CheckoutPage />} />
               <Route path="*" element={<NotFound />} />

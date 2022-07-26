@@ -103,6 +103,7 @@ export const ProductGridItem = styled.div`
 width: 90vw;
 display: flex;
 flex-direction: column;
+align-items: center;
 margin-bottom: 30px;
 @media (min-width: 500px) {
     margin-left: 20px;
