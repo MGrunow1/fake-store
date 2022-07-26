@@ -56,7 +56,7 @@ export default function ProductDetailsPage(props) {
                 onChange={(event) => setChosenQuantity(event.target.value)}
               />
             </SpacedText>
-            <AddChoiceToCart />
+            <AddChoiceToCart info={productInfo} quantity={chosenQuantity} />
           </ProductText>
           <div style={{ height: "90vh" }}>
             <LargeImage
