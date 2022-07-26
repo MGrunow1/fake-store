@@ -53,7 +53,7 @@ export default function ProductDetailsPage(props) {
                 dark={theme === 'dark'}
                 min={1}
                 value={chosenQuantity}
-                onChange={(event) => setChosenQuantity(event.target.value)}
+                onChange={(event) => setChosenQuantity(Number(event.target.value))}
               />
             </SpacedText>
             <AddChoiceToCart info={productInfo} quantity={chosenQuantity} />

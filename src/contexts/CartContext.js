@@ -30,7 +30,6 @@ const CartProvider = (props) => {
     const changeQuantityAtIndex = (index, newQuantity) => {
         if(newQuantity > 0) {
             const newElement = cart[index];
-            console.log(newQuantity)
             newElement.quantity = newQuantity;
             setCart(cart.slice(0,index).concat(newElement).concat(cart.slice(index+1, cart.length)));
         } else {
