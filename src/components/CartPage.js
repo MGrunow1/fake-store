@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { ThemeContext } from "../contexts/ThemeContext";
 import { CartContext } from "../contexts/CartContext";
-import { CenteredGroup, PrimaryButton, ProductGrid, SecondaryButton } from "./StyledComponents";
+import { CenteredGroup, PrimaryButton, SecondaryButton } from "./StyledComponents";
 import CartItemCard from "./CartItemCard";
 import { Link } from "react-router-dom";
 
@@ -10,7 +10,7 @@ export default function CartPage() {
     const { theme } = useContext(ThemeContext);
     return (
         <>
-        <ProductGrid>
+        <CenteredGroup>
             {cart.length ? (
                 cart.map((item, index) => (
                     <div key={index}>
@@ -22,7 +22,7 @@ export default function CartPage() {
                     Your cart is empty.
                 </div>
             )}
-        </ProductGrid>
+        </CenteredGroup>
         <CenteredGroup>
             {cart.length ? (
                 <>
