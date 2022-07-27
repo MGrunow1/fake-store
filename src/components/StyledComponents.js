@@ -47,6 +47,17 @@ font-size: 2rem;
 }
 `;
 
+export const FormInput = styled.input`
+${(props) => props.dark
+  ? `border: 1px solid white;
+    background-color: black;
+    color: white;`
+  : `border: 1px solid black;
+    background-color: white;
+    color: black;`
+}
+`;
+
 export const InputLabel = styled.label`
 font-size: 1.2rem;
 margin-right: 10px;
@@ -74,6 +85,23 @@ ${(props) => props.dark
 @media (min-width: 700px) {
     width: max-content;
     margin-bottom: 15px;
+}
+`;
+
+export const MainForm = styled.form`
+margin-top: 20px;
+padding: 10px;
+width: 90vw;
+${(props) => props.dark
+  ? `border: 2px solid white;
+    background-color: gray;
+    color: white;`
+  : `border: 2px solid black;
+    background-color: silver;
+    color: black;`
+}
+@media (min-width: 700px) {
+    width: 600px;
 }
 `;
 
