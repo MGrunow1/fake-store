@@ -28,6 +28,11 @@ justify-content: center;
 margin-bottom: 3px;
 `;
 
+export const CenteredList = styled.div`
+display: flex;
+justify-content: center;
+`;
+
 export const CenteredTitle = styled.div`
 text-align: center;
 margin-bottom: 20px;
@@ -57,6 +62,19 @@ width: 100%;
 export const LeftAlign = styled.div`
 margin-bottom: .5rem;
 text-align: left;
+`;
+
+export const ListItem = styled.div`
+width: 90vw;
+margin-bottom: 10px;
+${(props) => props.dark
+  ? `border-bottom: 2px solid white;`
+  : `border-bottom: 2px solid black;`
+}
+@media (min-width: 700px) {
+    width: max-content;
+    margin-bottom: 15px;
+}
 `;
 
 export const MediumText = styled.div`
