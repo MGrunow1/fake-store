@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { CartContext } from "../contexts/CartContext";
 import { ThemeContext } from "../contexts/ThemeContext";
 import { QuantityInput, SecondaryButton } from "./StyledComponents";
@@ -8,6 +8,12 @@ export default function QuantityWidget({ id, quantity }) {
     const { theme } = useContext(ThemeContext);
     const [wantToChange, setWantToChange] = useState(false);
     const [chosenQuantity, setChosenQuantity] = useState(quantity);
+
+    // update quantity when the page changes
+    // (fixes bug where widget remembers a quantity from a deleted item)
+    useEffect(() => {
+        setChosenQuantity(quantity);
+    }, [quantity]);
     
     function allowChange() {
         setWantToChange(true);
