@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { ThemeContext } from "../contexts/ThemeContext";
+import { ThemeContext } from "../../contexts/ThemeContext";
 import {
   InputLabel,
   LargeImage,
@@ -9,7 +9,7 @@ import {
   QuantityInput,
   SpacedText,
   Title,
-} from "./StyledComponents";
+} from "../StyledComponents";
 import AddChoiceToCart from "./AddChoiceToCart";
 
 export default function ShowDetails(props) {

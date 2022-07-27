@@ -1,8 +1,8 @@
 import { useContext, useEffect, useState } from "react";
-import { ThemeContext } from "../contexts/ThemeContext";
-import { CartContext } from "../contexts/CartContext";
+import { ThemeContext } from "../../contexts/ThemeContext";
+import { CartContext } from "../../contexts/CartContext";
 import { Link } from "react-router-dom";
-import { CenteredGroup, CenteredTitle, PrimaryButton } from "./StyledComponents";
+import { CenteredGroup, CenteredTitle, PrimaryButton } from "../StyledComponents";
 import BillingForm from "./BillingForm";
 import CheckoutItem from "./CheckoutItem";
 

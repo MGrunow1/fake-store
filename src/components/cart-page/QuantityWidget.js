@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from "react";
-import { CartContext } from "../contexts/CartContext";
-import { ThemeContext } from "../contexts/ThemeContext";
-import { QuantityInput, SecondaryButton } from "./StyledComponents";
+import { CartContext } from "../../contexts/CartContext";
+import { ThemeContext } from "../../contexts/ThemeContext";
+import { QuantityInput, SecondaryButton } from "../StyledComponents";
 
 export default function QuantityWidget({ id, quantity }) {
     const { changeCartItemQuantity } = useContext(CartContext);

@@ -1,6 +1,6 @@
 import { useContext } from "react";
-import { ThemeContext } from "../contexts/ThemeContext";
-import { CenteredList, ListItem, MediumText } from "./StyledComponents";
+import { ThemeContext } from "../../contexts/ThemeContext";
+import { CenteredList, ListItem, MediumText } from "../StyledComponents";
 
 export default function CheckoutItem( {item} ) {
     const { name, price, quantity } = item

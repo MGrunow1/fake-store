@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
-import { ThemeContext } from "../contexts/ThemeContext";
-import { MainForm } from "./StyledComponents";
+import { ThemeContext } from "../../contexts/ThemeContext";
+import { MainForm } from "../StyledComponents";
 import TextFormField from "./TextFormField";
 
 export default function BillingForm() {
