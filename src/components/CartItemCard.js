@@ -1,14 +1,14 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { CartContext } from "../contexts/CartContext";
 import { ThemeContext } from "../contexts/ThemeContext";
-import { QuantityInput, MediumText, SecondaryButton } from "./StyledComponents";
+import { MediumText, SecondaryButton } from "./StyledComponents";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrashCan } from '@fortawesome/free-solid-svg-icons';
+import QuantityWidget from "./QuantityWidget";
 
 export default function CartItemCard({itemInfo}) {
     const { deleteFromCart } = useContext(CartContext);
     const { theme } = useContext(ThemeContext);
-    const [quantity, setQuantity] = useState(itemInfo.quantity);
 
     function remove() {
         deleteFromCart(itemInfo.id);
@@ -18,10 +18,10 @@ export default function CartItemCard({itemInfo}) {
         <>
         <MediumText>
             {itemInfo.name}
-            </MediumText>
-        <MediumText>
-            Quantity:
-            </MediumText>
+        </MediumText>
+        <QuantityWidget
+          id={itemInfo.id}
+          quantity={itemInfo.quantity} />
         <SecondaryButton
           onClick={remove}
           dark={theme === 'dark'}>
