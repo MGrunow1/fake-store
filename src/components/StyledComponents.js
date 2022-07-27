@@ -47,7 +47,16 @@ font-size: 2rem;
 }
 `;
 
+export const DropDownContainer = styled.div`
+margin-left: 10px;
+margin-right: 10px;
+display: flex;
+flex-direction: column;
+align-items: center;
+`;
+
 export const FormInput = styled.input`
+margin-left: 10px;
 ${(props) => props.dark
   ? `border: 1px solid white;
     background-color: black;
@@ -93,12 +102,8 @@ margin-top: 20px;
 padding: 10px;
 width: 90vw;
 ${(props) => props.dark
-  ? `border: 2px solid white;
-    background-color: gray;
-    color: white;`
-  : `border: 2px solid black;
-    background-color: silver;
-    color: black;`
+  ? `border: 2px solid white;`
+  : `border: 2px solid black;`
 }
 @media (min-width: 700px) {
     width: 600px;
@@ -178,6 +183,15 @@ ${(props) => props.dark
     color: white;`
   : `border: 1px solid black;
     background-color: white;
+    color: black;`
+}
+`;
+
+export const SelectDropDown = styled.select`
+${(props) => props.dark
+  ? `background-color: black;
+    color: white;`
+  : `background-color: white;
     color: black;`
 }
 `;

@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import { ThemeContext } from "../../contexts/ThemeContext";
 import { MainForm } from "../StyledComponents";
+import CreditCardInfo from "./CreditCardInfo";
 import TextFormField from "./TextFormField";
 
 export default function BillingForm() {
@@ -8,6 +9,7 @@ export default function BillingForm() {
     const [name, setName] = useState("");
     const [shippingAddress, setShippingAddress] = useState("");
     const [billingAddress, setBillingAddress] = useState("");
+    const [cardNumber, setCardNumber] = useState("");
     
     function handleSubmit(event) {
         event.preventDefault();
@@ -36,7 +38,7 @@ export default function BillingForm() {
               value={billingAddress}
               valueSetter={setBillingAddress}
               />
-            <div>Credit Card Info</div>
+            <CreditCardInfo cardNumber={cardNumber} setCardNumber={setCardNumber} />
             <input
              type="submit"
              />
