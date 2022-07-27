@@ -59,6 +59,10 @@ margin-bottom: .5rem;
 text-align: left;
 `;
 
+export const MediumText = styled.div`
+font-size: 1rem;
+`;
+
 export const NavContainer = styled.div`
 display: flex;
 ${(props) => props.vertical
