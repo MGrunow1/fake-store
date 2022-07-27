@@ -16,7 +16,7 @@ export default function ProductCard(props) {
        />
       </Link>
       <div>{title}</div>
-      <div>${price}</div>
+      <div>${price.toFixed(2)}</div>
       <Link to={`/products/${id}`}>
         <PrimaryButton dark={theme === 'dark'}>
           More Details

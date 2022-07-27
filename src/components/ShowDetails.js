@@ -16,13 +16,14 @@ export default function ShowDetails(props) {
     const [chosenQuantity, setChosenQuantity] = useState(1);
     const { theme } = useContext(ThemeContext);
     const { productInfo } = props
+    const itemPrice = (productInfo.price) ? productInfo.price.toFixed(2) : 0;
 
     return (
         <ProductGrid>
           <ProductText>
             <Title>{productInfo.title}</Title>
             <LeftAlign>{productInfo.description}</LeftAlign>
-            <SpacedText>${productInfo.price}</SpacedText>
+            <SpacedText>${itemPrice}</SpacedText>
             <SpacedText>(Category: {productInfo.category})</SpacedText>
             <SpacedText>
               <InputLabel htmlFor="quantity">Quantity:</InputLabel>
