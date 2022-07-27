@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { ThemeContext } from "../contexts/ThemeContext";
 import { CartContext } from "../contexts/CartContext";
-import { CenteredGroup, PrimaryButton, ProductGrid } from "./StyledComponents";
+import { CenteredGroup, PrimaryButton, ProductGrid, SecondaryButton } from "./StyledComponents";
 import CartItemCard from "./CartItemCard";
 import { Link } from "react-router-dom";
 
@@ -17,21 +17,34 @@ export default function CartPage() {
                         <CartItemCard itemInfo={item} />
                     </div>
                     ))
-                ) : (
+            ) : (
                 <div>
                     Your cart is empty.
                 </div>
             )}
         </ProductGrid>
-            {(cart.length > 0) && 
-            <CenteredGroup>
+        <CenteredGroup>
+            {cart.length ? (
+                <>
                 <Link to="/checkout">
                     <PrimaryButton dark={theme === 'dark'}>
                         Proceed to checkout
                     </PrimaryButton>
                 </Link>
-            </CenteredGroup>
-            }
+                <Link to="/products">
+                    <SecondaryButton dark={theme === 'dark'}>
+                        Continue shopping
+                    </SecondaryButton>
+                </Link>
+                </>
+            ) : (
+                <Link to="/products">
+                    <SecondaryButton dark={theme === 'dark'}>
+                        View the products page
+                    </SecondaryButton>
+                </Link>
+            )}
+        </CenteredGroup>
         </>
     )
 }
