@@ -1,7 +1,7 @@
 import { useContext } from "react";
-import { CartContext } from "../contexts/CartContext";
-import { ThemeContext } from "../contexts/ThemeContext";
-import { MediumText, ProductGridItem, SecondaryButton } from "./StyledComponents";
+import { CartContext } from "../../contexts/CartContext";
+import { ThemeContext } from "../../contexts/ThemeContext";
+import { MediumText, ProductGridItem, SecondaryButton } from "../StyledComponents";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrashCan } from '@fortawesome/free-solid-svg-icons';
 import QuantityWidget from "./QuantityWidget";

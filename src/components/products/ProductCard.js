@@ -1,11 +1,10 @@
 import { useContext } from "react";
-import { ThemeContext } from "../contexts/ThemeContext";
+import { ThemeContext } from "../../contexts/ThemeContext";
 import { Link } from "react-router-dom";
-import { PrimaryButton, ProductGridItem, SizedImage } from "./StyledComponents";
+import { PrimaryButton, ProductGridItem, SizedImage } from "../StyledComponents";
 
-export default function ProductCard(props) {
+export default function ProductCard({ id, image, price, title }) {
   const { theme } = useContext(ThemeContext);
-  const { id, image, price, title } = props;
 
   return (
     <ProductGridItem>
@@ -16,7 +15,7 @@ export default function ProductCard(props) {
        />
       </Link>
       <div>{title}</div>
-      <div>${price}</div>
+      <div>${price.toFixed(2)}</div>
       <Link to={`/products/${id}`}>
         <PrimaryButton dark={theme === 'dark'}>
           More Details

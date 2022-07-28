@@ -1,9 +1,9 @@
 import { useContext } from "react";
-import { ThemeContext } from "../contexts/ThemeContext";
-import { CartContext } from "../contexts/CartContext";
-import { CenteredGroup, PrimaryButton, SecondaryButton } from "./StyledComponents";
-import CartItemCard from "./CartItemCard";
+import { ThemeContext } from "../../contexts/ThemeContext";
+import { CartContext } from "../../contexts/CartContext";
 import { Link } from "react-router-dom";
+import { CenteredGroup, PrimaryButton, SecondaryButton } from "../StyledComponents";
+import CartItemCard from "./CartItemCard";
 
 export default function CartPage() {
     const { cart } = useContext(CartContext);

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import Loading from "./Loading";
+import Loading from "../Loading";
 import ShowDetails from "./ShowDetails";
 
 export default function ProductDetailsPage() {

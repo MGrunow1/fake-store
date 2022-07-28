@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { ProductGrid } from "./StyledComponents";
-import Loading from "./Loading";
+import { ProductGrid } from "../StyledComponents";
+import Loading from "../Loading";
 import ProductCard from "./ProductCard";
 
 export default function ProductsPage() {

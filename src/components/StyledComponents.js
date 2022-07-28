@@ -28,6 +28,11 @@ justify-content: center;
 margin-bottom: 3px;
 `;
 
+export const CenteredList = styled.div`
+display: flex;
+justify-content: center;
+`;
+
 export const CenteredTitle = styled.div`
 text-align: center;
 margin-bottom: 20px;
@@ -39,6 +44,30 @@ font-size: 2rem;
 @media (min-width: 700px) {
   font-size: 4rem;
   margin-bottom: 0;
+}
+`;
+
+export const DropDownContainer = styled.div`
+margin-left: 10px;
+margin-right: 10px;
+margin-bottom: 14px;
+display: flex;
+flex-direction: column;
+align-items: center;
+@media (min-width: 700px) {
+    margin-bottom: 3px;
+}
+`;
+
+export const FormInput = styled.input`
+margin-left: 10px;
+${(props) => props.dark
+  ? `border: 1px solid white;
+    background-color: black;
+    color: white;`
+  : `border: 1px solid black;
+    background-color: white;
+    color: black;`
 }
 `;
 
@@ -57,6 +86,34 @@ width: 100%;
 export const LeftAlign = styled.div`
 margin-bottom: .5rem;
 text-align: left;
+`;
+
+export const ListItem = styled.div`
+width: 90vw;
+margin-bottom: 10px;
+${(props) => props.dark
+  ? `border-bottom: 2px solid white;`
+  : `border-bottom: 2px solid black;`
+}
+@media (min-width: 700px) {
+    width: max-content;
+    margin-bottom: 15px;
+}
+`;
+
+export const MainForm = styled.form`
+margin-top: 20px;
+padding: 10px;
+width: 90vw;
+display: flex;
+flex-direction: column;
+${(props) => props.dark
+  ? `border: 2px solid white;`
+  : `border: 2px solid black;`
+}
+@media (min-width: 700px) {
+    width: 600px;
+}
 `;
 
 export const MediumText = styled.div`
@@ -132,6 +189,15 @@ ${(props) => props.dark
     color: white;`
   : `border: 1px solid black;
     background-color: white;
+    color: black;`
+}
+`;
+
+export const SelectDropDown = styled.select`
+${(props) => props.dark
+  ? `background-color: black;
+    color: white;`
+  : `background-color: white;
     color: black;`
 }
 `;

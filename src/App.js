@@ -2,12 +2,12 @@ import './App.css';
 import { CartProvider } from './contexts/CartContext';
 import { ThemeProvider } from './contexts/ThemeContext';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import CartPage  from './components/CartPage';
-import CheckoutPage from './components/CheckoutPage';
+import CartPage  from './components/cart-page/CartPage';
+import CheckoutPage from './components/checkout/CheckoutPage';
 import HeaderFooter from './components/HeaderFooter';
 import NotFound from './components/NotFound';
-import ProductsPage from './components/ProductsPage';
-import ProductDetailsPage from './components/ProductDetailsPage';
+import ProductsPage from './components/products/ProductsPage';
+import ProductDetailsPage from './components/products/ProductDetailsPage';
 import WelcomePage from './components/WelcomePage';
 
 function App() {
