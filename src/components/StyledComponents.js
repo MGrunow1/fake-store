@@ -21,6 +21,12 @@ ${(props) => props.dark
 }
 `;
 
+export const CartWidgetContainer = styled.div`
+display: flex;
+align-items: center;
+margin: 0px 20px;
+`;
+
 export const CenteredGroup = styled.div`
 display: flex;
 flex-wrap: wrap;
@@ -59,6 +65,11 @@ align-items: center;
 }
 `;
 
+export const FooterContainer = styled.footer`
+text-align: center;
+min-height: 50px;
+`;
+
 export const FormInput = styled.input`
 margin-left: 10px;
 ${(props) => props.dark
@@ -69,6 +80,11 @@ ${(props) => props.dark
     background-color: white;
     color: black;`
 }
+`;
+
+export const HeaderContainer = styled.header`
+display: flex;
+justify-content: flex-end;
 `;
 
 export const InputLabel = styled.label`
@@ -128,9 +144,20 @@ ${(props) => props.vertical
 }
 `;
 
+export const NavLinkText = styled.div`
+margin: 10px;
+${(props) => props.dark
+  ? `color: white;`
+  : `color: black;`
+}
+`;
+
 export const PageContainer = styled.div`
 display: flex;
 flex-direction: column;
+justify-content: space-between;
+height: max-content;
+min-height: 100vh;
 ${(props) => props.dark
   ? `background-color: black;
     color: white;`

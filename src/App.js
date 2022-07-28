@@ -4,11 +4,12 @@ import { ThemeProvider } from './contexts/ThemeContext';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import CartPage  from './components/cart-page/CartPage';
 import CheckoutPage from './components/checkout/CheckoutPage';
-import HeaderFooter from './components/HeaderFooter';
+import HeaderFooter from './components/header-footer/HeaderFooter';
 import NotFound from './components/NotFound';
 import ProductsPage from './components/products/ProductsPage';
 import ProductDetailsPage from './components/products/ProductDetailsPage';
 import WelcomePage from './components/WelcomePage';
+import AllowCheckout from './components/checkout/AllowCheckout';
 
 function App() {
   return (
@@ -23,7 +24,9 @@ function App() {
                 <Route index element={<ProductsPage />} />
               </Route>
               <Route path="/cart" element={<CartPage />} />
-              <Route path='/checkout' element={<CheckoutPage />} />
+              <Route path='/checkout' element={<AllowCheckout>
+                  <CheckoutPage />
+                </AllowCheckout>} />
               <Route path="*" element={<NotFound />} />
             </Route>
           </Routes>
