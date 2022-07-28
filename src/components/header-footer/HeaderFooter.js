@@ -4,6 +4,7 @@ import { Outlet } from "react-router-dom";
 import { FooterContainer, HeaderContainer, PageContainer } from "../StyledComponents";
 import CartWidget from "./CartWidget";
 import NavBar from "./NavBar";
+import ThemeSwitch from "./ThemeSwitch";
 
 export default function HeaderFooter() {
     const { theme } = useContext(ThemeContext);
@@ -12,6 +13,7 @@ export default function HeaderFooter() {
         <HeaderContainer>
             <NavBar />
             <CartWidget />
+            <ThemeSwitch />
         </HeaderContainer>
         <div><Outlet /></div>
         <FooterContainer>
