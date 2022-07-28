@@ -37,7 +37,7 @@ export default function ShowDetails(props) {
             </SpacedText>
             <AddChoiceToCart info={productInfo} quantity={chosenQuantity} />
           </ProductText>
-          <div style={{ height: "90vh" }}>
+          <div style={{ height: "90vh", overflow: "scroll" }}>
             <LargeImage
               src={productInfo.image}
               alt={`Image of ${productInfo.title}`}
