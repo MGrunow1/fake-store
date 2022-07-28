@@ -128,6 +128,14 @@ ${(props) => props.vertical
 }
 `;
 
+export const NavLinkText = styled.div`
+margin: 10px;
+${(props) => props.dark
+  ? `color: white;`
+  : `color: black;`
+}
+`;
+
 export const PageContainer = styled.div`
 display: flex;
 flex-direction: column;
