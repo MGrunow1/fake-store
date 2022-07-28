@@ -50,9 +50,13 @@ font-size: 2rem;
 export const DropDownContainer = styled.div`
 margin-left: 10px;
 margin-right: 10px;
+margin-bottom: 14px;
 display: flex;
 flex-direction: column;
 align-items: center;
+@media (min-width: 700px) {
+    margin-bottom: 3px;
+}
 `;
 
 export const FormInput = styled.input`
@@ -101,6 +105,8 @@ export const MainForm = styled.form`
 margin-top: 20px;
 padding: 10px;
 width: 90vw;
+display: flex;
+flex-direction: column;
 ${(props) => props.dark
   ? `border: 2px solid white;`
   : `border: 2px solid black;`

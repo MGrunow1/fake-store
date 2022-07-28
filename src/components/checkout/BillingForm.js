@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import { ThemeContext } from "../../contexts/ThemeContext";
-import { MainForm } from "../StyledComponents";
+import { MainForm, PrimaryButton } from "../StyledComponents";
 import CreditCardInfo from "./CreditCardInfo";
 import TextFormField from "./TextFormField";
 
@@ -39,8 +39,10 @@ export default function BillingForm() {
               valueSetter={setBillingAddress}
               />
             <CreditCardInfo cardNumber={cardNumber} setCardNumber={setCardNumber} />
-            <input
+            <PrimaryButton as="input"
              type="submit"
+             dark={theme === 'dark'}
+             style={{alignSelf: "center"}}
              />
          </MainForm>
         </>
