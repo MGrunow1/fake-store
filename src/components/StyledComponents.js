@@ -21,6 +21,12 @@ ${(props) => props.dark
 }
 `;
 
+export const CartWidgetContainer = styled.div`
+display: flex;
+align-items: center;
+margin: 0px 20px;
+`;
+
 export const CenteredGroup = styled.div`
 display: flex;
 flex-wrap: wrap;
@@ -69,6 +75,11 @@ ${(props) => props.dark
     background-color: white;
     color: black;`
 }
+`;
+
+export const HeaderContainer = styled.header`
+display: flex;
+justify-content: flex-end;
 `;
 
 export const InputLabel = styled.label`

@@ -13,10 +13,6 @@ export default function NavBar() {
                 page="/checkout"
                 text="Checkout"
             />
-            <StyledNavLink
-                page="/cart"
-                text="Cart"
-            />
         </NavContainer>
         </>
     )
