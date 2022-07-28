@@ -65,6 +65,11 @@ align-items: center;
 }
 `;
 
+export const FooterContainer = styled.footer`
+text-align: center;
+min-height: 50px;
+`;
+
 export const FormInput = styled.input`
 margin-left: 10px;
 ${(props) => props.dark
@@ -150,6 +155,9 @@ ${(props) => props.dark
 export const PageContainer = styled.div`
 display: flex;
 flex-direction: column;
+justify-content: space-between;
+height: max-content;
+min-height: 100vh;
 ${(props) => props.dark
   ? `background-color: black;
     color: white;`

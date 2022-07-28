@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { ThemeContext } from "../../contexts/ThemeContext";
 import { Outlet } from "react-router-dom";
-import { HeaderContainer, PageContainer } from "../StyledComponents";
+import { FooterContainer, HeaderContainer, PageContainer } from "../StyledComponents";
 import CartWidget from "./CartWidget";
 import NavBar from "./NavBar";
 
@@ -14,6 +14,9 @@ export default function HeaderFooter() {
             <CartWidget />
         </HeaderContainer>
         <div><Outlet /></div>
+        <FooterContainer>
+            &copy; 2022 Michael Grunow
+        </FooterContainer>
         </PageContainer>
     )
 }
