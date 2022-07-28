@@ -4,7 +4,7 @@ import { ThemeProvider } from './contexts/ThemeContext';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import CartPage  from './components/cart-page/CartPage';
 import CheckoutPage from './components/checkout/CheckoutPage';
-import HeaderFooter from './components/HeaderFooter';
+import HeaderFooter from './components/header-footer/HeaderFooter';
 import NotFound from './components/NotFound';
 import ProductsPage from './components/products/ProductsPage';
 import ProductDetailsPage from './components/products/ProductDetailsPage';

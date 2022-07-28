@@ -1,4 +1,4 @@
-import { NavContainer } from "./StyledComponents";
+import { NavContainer } from "../StyledComponents";
 import StyledNavLink from "./StyledNavLink";
 
 export default function NavBar() {
