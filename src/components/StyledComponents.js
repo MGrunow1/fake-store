@@ -257,6 +257,14 @@ align-self: center;
 margin-right: 30px;
 `;
 
+export const SwitchIcon = styled.div`
+display: flex;
+justify-content: center;
+align-items: center;
+height: 100%;
+font-size: 16px;
+`;
+
 export const Title = styled.div`
 font-size: 2rem;
 margin-bottom: 1.3rem;
