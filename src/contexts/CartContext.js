@@ -23,6 +23,10 @@ const CartProvider = (props) => {
         }
     }
 
+    const clearCart = () => {
+        setCart([]);
+    }
+
     const deleteFromCart = (itemID) => {
         setCart(cart.filter(item => item.id !== itemID));
     }
@@ -39,7 +43,7 @@ const CartProvider = (props) => {
     }
 
     return (
-        <CartContext.Provider value={{cart, addToCart, deleteFromCart, changeCartItemQuantity}}>
+        <CartContext.Provider value={{cart, addToCart, deleteFromCart, changeCartItemQuantity, clearCart}}>
             {props.children}
         </CartContext.Provider>
     )

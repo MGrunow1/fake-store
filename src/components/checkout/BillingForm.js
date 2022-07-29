@@ -1,11 +1,15 @@
 import { useContext, useState } from "react";
 import { ThemeContext } from "../../contexts/ThemeContext";
+import { CartContext } from "../../contexts/CartContext";
+import { useNavigate } from "react-router-dom";
 import { MainForm, PrimaryButton } from "../StyledComponents";
 import CreditCardInfo from "./CreditCardInfo";
 import TextFormField from "./TextFormField";
 
 export default function BillingForm() {
     const { theme } = useContext(ThemeContext);
+    const { clearCart } = useContext(CartContext);
+    const navigate = useNavigate();
     const [name, setName] = useState("");
     const [shippingAddress, setShippingAddress] = useState("");
     const [billingAddress, setBillingAddress] = useState("");
@@ -13,6 +17,8 @@ export default function BillingForm() {
     
     function handleSubmit(event) {
         event.preventDefault();
+        clearCart();
+        navigate("/products")
     }
 
     return (
