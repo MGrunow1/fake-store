@@ -196,6 +196,14 @@ ${(props) => props.dark
     background-color: white;
     color: black;`
 }
+&:active {
+  border-width: 3px;
+  padding: 4px;
+  ${(props) => props.dark
+  ? `background-color: #444;`
+  : `background-color: #ddd;`
+    }
+  }
 `;
 
 export const ProductGrid = styled.div`
@@ -259,6 +267,14 @@ ${(props) => props.dark
     background-color: white;
     color: black;`
 }
+&:active {
+  border-width: 3px;
+  padding: 4px;
+  ${(props) => props.dark
+  ? `background-color: #444;`
+  : `background-color: #ddd;`
+    }
+  }
 `;
 
 export const SizedImage = styled.img`
@@ -300,4 +316,12 @@ ${(props) => props.dark
     background-color: white;
     color: black;`
 }
+&:active {
+  border-width: 3px;
+  padding: 4px;
+  ${(props) => props.dark
+  ? `background-color: #444;`
+  : `background-color: #ddd;`
+    }
+  }
 `;
