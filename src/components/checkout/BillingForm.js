@@ -3,6 +3,7 @@ import { ThemeContext } from "../../contexts/ThemeContext";
 import { CartContext } from "../../contexts/CartContext";
 import { useNavigate } from "react-router-dom";
 import { MainForm, PrimaryButton } from "../StyledComponents";
+import AddressCopier from "./AddressCopier";
 import CreditCardInfo from "./CreditCardInfo";
 import TextFormField from "./TextFormField";
 
@@ -38,11 +39,9 @@ export default function BillingForm() {
               value={shippingAddress}
               valueSetter={setShippingAddress}
               />
-              <TextFormField
-              labelID={"billingAddress"}
-              labelText={"Billing Address"}
-              value={billingAddress}
-              valueSetter={setBillingAddress}
+              <AddressCopier
+              billingAddress={billingAddress}
+              setBillingAddress={setBillingAddress}
               />
             <CreditCardInfo cardNumber={cardNumber} setCardNumber={setCardNumber} />
             <PrimaryButton as="input"

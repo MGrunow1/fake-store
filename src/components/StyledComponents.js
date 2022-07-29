@@ -53,6 +53,13 @@ font-size: 2rem;
 }
 `;
 
+export const Checkbox = styled.input`
+${(props) => props.dark
+  ? `accent-color: slategray;`
+  : `accent-color: white;`
+}
+`;
+
 export const DropDownContainer = styled.div`
 margin-left: 10px;
 margin-right: 10px;
