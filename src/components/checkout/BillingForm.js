@@ -41,6 +41,7 @@ export default function BillingForm() {
             <AddressCopier
               billingAddress={billingAddress}
               setBillingAddress={setBillingAddress}
+              shippingAddress={shippingAddress}
             />
             <CreditCardInfo
               cardNumber={cardNumber}

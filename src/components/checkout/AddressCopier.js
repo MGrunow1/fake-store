@@ -1,19 +1,22 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { ThemeContext } from "../../contexts/ThemeContext";
 import { Checkbox, FormInput, SpacedText } from "../StyledComponents";
 
-export default function AddressCopier ({
-        billingAddress,
-        setBillingAddress
-    }) {
+export default function AddressCopier ({ billingAddress, setBillingAddress, shippingAddress }) {
     const { theme } = useContext(ThemeContext);
     const [copyAddress, setCopyAddress] = useState(false);
+
+    // update billing address when automatically matching shipping
+    useEffect(() => {
+        if(copyAddress) {
+            setBillingAddress(shippingAddress)
+        }
+    }, [copyAddress, setBillingAddress, shippingAddress]);
 
     function toggleShippingToBilling() {
         setCopyAddress(!copyAddress);
     }
     return (
-        <>
         <SpacedText style={{display: "flex", flexWrap: "wrap"}}>
             <label htmlFor="billingAddress">
                 "Billing Address"
@@ -37,6 +40,5 @@ export default function AddressCopier ({
                     </label>
                 </div>
         </SpacedText>
-        </>
     )
 }
