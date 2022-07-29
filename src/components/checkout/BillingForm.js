@@ -23,33 +23,34 @@ export default function BillingForm() {
     }
 
     return (
-        <>
         <MainForm
-         onSubmit={handleSubmit}
-         dark={theme === 'dark'}>
+          onSubmit={handleSubmit}
+          dark={theme === 'dark'}>
             <TextFormField
               labelID={"customerName"}
               labelText={"Customer Name"}
               value={name}
               valueSetter={setName}
-              />
-              <TextFormField
+            />
+            <TextFormField
               labelID={"shippingAddress"}
               labelText={"Shipping Address"}
               value={shippingAddress}
               valueSetter={setShippingAddress}
-              />
-              <AddressCopier
+            />
+            <AddressCopier
               billingAddress={billingAddress}
               setBillingAddress={setBillingAddress}
-              />
-            <CreditCardInfo cardNumber={cardNumber} setCardNumber={setCardNumber} />
+            />
+            <CreditCardInfo
+              cardNumber={cardNumber}
+              setCardNumber={setCardNumber}
+            />
             <PrimaryButton as="input"
              type="submit"
              dark={theme === 'dark'}
              style={{alignSelf: "center"}}
-             />
-         </MainForm>
-        </>
+            />
+        </MainForm>
     )
 }
