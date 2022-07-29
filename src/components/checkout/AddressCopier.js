@@ -19,12 +19,13 @@ export default function AddressCopier ({ billingAddress, setBillingAddress, ship
     return (
         <SpacedText style={{display: "flex", flexWrap: "wrap"}}>
             <label htmlFor="billingAddress">
-                "Billing Address"
+                Billing Address
             </label>
             <FormInput
              name="billingAddress"
              type="text"
              value={billingAddress}
+             disabled={copyAddress}
              onChange={(event) => setBillingAddress(event.target.value)}
              dark={theme === 'dark'}
             />

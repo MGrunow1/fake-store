@@ -87,6 +87,16 @@ ${(props) => props.dark
     background-color: white;
     color: black;`
 }
+${(props) => (props.disabled && props.dark)
+  ? `background-color: #444;
+    border-color: #ccc;`
+  : ``
+}
+${(props) => (props.disabled && !props.dark)
+  ? `background-color: #ccc;
+    border-color: #444`
+  : ``
+}
 `;
 
 export const HeaderContainer = styled.header`
