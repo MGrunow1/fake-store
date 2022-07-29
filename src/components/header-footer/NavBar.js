@@ -1,7 +1,10 @@
+import { useContext } from "react";
+import { CartContext } from "../../contexts/CartContext";
 import { NavContainer } from "../StyledComponents";
 import StyledNavLink from "./StyledNavLink";
 
 export default function NavBar() {
+    const { cart } = useContext(CartContext);
     return (
         <>
         <NavContainer vertical={false}>
@@ -9,10 +12,13 @@ export default function NavBar() {
                 page="/products"
                 text="Products"
             />
-            <StyledNavLink
-                page="/checkout"
-                text="Checkout"
-            />
+            {(cart.length > 0) &&
+                <StyledNavLink
+                    page="/checkout"
+                    text="Checkout"
+                />
+            }
+            
         </NavContainer>
         </>
     )

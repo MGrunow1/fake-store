@@ -53,6 +53,13 @@ font-size: 2rem;
 }
 `;
 
+export const Checkbox = styled.input`
+${(props) => props.dark
+  ? `accent-color: slategray;`
+  : `accent-color: white;`
+}
+`;
+
 export const DropDownContainer = styled.div`
 margin-left: 10px;
 margin-right: 10px;
@@ -79,6 +86,16 @@ ${(props) => props.dark
   : `border: 1px solid black;
     background-color: white;
     color: black;`
+}
+${(props) => (props.disabled && props.dark)
+  ? `background-color: #444;
+    border-color: #ccc;`
+  : ``
+}
+${(props) => (props.disabled && !props.dark)
+  ? `background-color: #ccc;
+    border-color: #444`
+  : ``
 }
 `;
 
@@ -179,6 +196,14 @@ ${(props) => props.dark
     background-color: white;
     color: black;`
 }
+&:active {
+  border-width: 3px;
+  padding: 4px;
+  ${(props) => props.dark
+  ? `background-color: #444;`
+  : `background-color: #ddd;`
+    }
+  }
 `;
 
 export const ProductGrid = styled.div`
@@ -242,6 +267,14 @@ ${(props) => props.dark
     background-color: white;
     color: black;`
 }
+&:active {
+  border-width: 3px;
+  padding: 4px;
+  ${(props) => props.dark
+  ? `background-color: #444;`
+  : `background-color: #ddd;`
+    }
+  }
 `;
 
 export const SizedImage = styled.img`
@@ -283,4 +316,12 @@ ${(props) => props.dark
     background-color: white;
     color: black;`
 }
+&:active {
+  border-width: 3px;
+  padding: 4px;
+  ${(props) => props.dark
+  ? `background-color: #444;`
+  : `background-color: #ddd;`
+    }
+  }
 `;
