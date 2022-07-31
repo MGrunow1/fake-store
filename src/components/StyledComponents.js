@@ -75,6 +75,12 @@ align-items: center;
 export const FooterContainer = styled.footer`
 text-align: center;
 min-height: 50px;
+${(props) => props.dark
+  ? `background-color: #3c4c77;
+    color: white;`
+  : `background-color: #cdd6f0;
+    color: black;`
+}
 `;
 
 export const FormInput = styled.input`
@@ -102,6 +108,13 @@ ${(props) => (props.disabled && !props.dark)
 export const HeaderContainer = styled.header`
 display: flex;
 justify-content: flex-end;
+margin-bottom: 20px;
+${(props) => props.dark
+  ? `background-color: #3c4c77;
+    color: white;`
+  : `background-color: #cdd6f0;
+    color: black;`
+}
 `;
 
 export const InputLabel = styled.label`
