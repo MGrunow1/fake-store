@@ -26,6 +26,10 @@ export const CartWidgetContainer = styled.div`
 display: flex;
 align-items: center;
 margin: 0px 20px;
+${(props) => props.dark
+  ? `color: white;`
+  : `color: black;`
+}
 `;
 
 export const CenteredGroup = styled.div`
@@ -58,6 +62,17 @@ export const Checkbox = styled.input`
 ${(props) => props.dark
   ? `accent-color: #3c4c77;`
   : `accent-color: #cdd6f0;`
+}
+`;
+
+export const Circle = styled.div`
+border-radius: 50%;
+padding: 3px 9px;
+${(props) => props.dark
+  ? `background-color: #cdd6f0;
+    color: black;`
+  : `background-color: #3c4c77;
+    color: white;`
 }
 `;
 
@@ -180,6 +195,10 @@ margin: 10px;
 ${(props) => props.dark
   ? `color: white;`
   : `color: black;`
+}
+${(props) => props.lessMargin
+  ? `margin-right: 5px;`
+  : ``
 }
 `;
 
