@@ -10,13 +10,13 @@ export default function HeaderFooter() {
     const { theme } = useContext(ThemeContext);
     return (
         <PageContainer dark={theme === 'dark'}>
-        <HeaderContainer>
+        <HeaderContainer dark={theme === 'dark'}>
             <NavBar />
             <CartWidget />
             <ThemeSwitch />
         </HeaderContainer>
         <div><Outlet /></div>
-        <FooterContainer>
+        <FooterContainer dark={theme === 'dark'}>
             &copy; 2022 Michael Grunow
         </FooterContainer>
         </PageContainer>

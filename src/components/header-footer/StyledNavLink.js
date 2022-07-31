@@ -3,7 +3,7 @@ import { ThemeContext } from "../../contexts/ThemeContext";
 import { NavLink } from "react-router-dom";
 import { NavLinkText } from "../StyledComponents";
 
-export default function StyledNavLink({ page, text }) {
+export default function StyledNavLink({ page, text, lessMargin }) {
     const { theme } = useContext(ThemeContext);
     function styleByActiveStatus(isActive) {
         return isActive ? { fontWeight: "bold", textDecoration: "none"}
@@ -12,7 +12,7 @@ export default function StyledNavLink({ page, text }) {
     return(
         <>
         <NavLink to={page} style={({isActive}) => styleByActiveStatus(isActive)}>
-            <NavLinkText dark={theme === 'dark'}>
+            <NavLinkText dark={theme === 'dark'} lessMargin={lessMargin}>
                 {text}
             </NavLinkText>
          </NavLink>

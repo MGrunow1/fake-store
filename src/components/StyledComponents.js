@@ -1,3 +1,4 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styled from "styled-components";
 
 export const ButtonTag = styled.div`
@@ -12,11 +13,11 @@ border-right-width: 0;
 border-top-width: 1px;
 border-style: solid;
 ${(props) => props.dark
-  ? `border-color: ghostwhite;
-    background-color: slategray;
-    color: white;`
-  : `border-color: slategray;
-    background-color: ghostwhite;
+  ? `border-color: #ebebeb;
+    background-color: black;
+    color: #ebebeb;`
+  : `border-color: #1c1c1c;
+    background-color: white;
     color: black;`
 }
 `;
@@ -25,6 +26,10 @@ export const CartWidgetContainer = styled.div`
 display: flex;
 align-items: center;
 margin: 0px 20px;
+${(props) => props.dark
+  ? `color: white;`
+  : `color: black;`
+}
 `;
 
 export const CenteredGroup = styled.div`
@@ -55,8 +60,19 @@ font-size: 2rem;
 
 export const Checkbox = styled.input`
 ${(props) => props.dark
-  ? `accent-color: slategray;`
-  : `accent-color: white;`
+  ? `accent-color: #3c4c77;`
+  : `accent-color: #cdd6f0;`
+}
+`;
+
+export const Circle = styled.div`
+border-radius: 50%;
+padding: 3px 9px;
+${(props) => props.dark
+  ? `background-color: #cdd6f0;
+    color: black;`
+  : `background-color: #3c4c77;
+    color: white;`
 }
 `;
 
@@ -75,6 +91,12 @@ align-items: center;
 export const FooterContainer = styled.footer`
 text-align: center;
 min-height: 50px;
+${(props) => props.dark
+  ? `background-color: #3c4c77;
+    color: white;`
+  : `background-color: #cdd6f0;
+    color: black;`
+}
 `;
 
 export const FormInput = styled.input`
@@ -93,7 +115,7 @@ ${(props) => (props.disabled && props.dark)
   : ``
 }
 ${(props) => (props.disabled && !props.dark)
-  ? `background-color: #ccc;
+  ? `background-color: #ebebeb;
     border-color: #444`
   : ``
 }
@@ -102,6 +124,13 @@ ${(props) => (props.disabled && !props.dark)
 export const HeaderContainer = styled.header`
 display: flex;
 justify-content: flex-end;
+margin-bottom: 20px;
+${(props) => props.dark
+  ? `background-color: #3c4c77;
+    color: white;`
+  : `background-color: #cdd6f0;
+    color: black;`
+}
 `;
 
 export const InputLabel = styled.label`
@@ -167,6 +196,10 @@ ${(props) => props.dark
   ? `color: white;`
   : `color: black;`
 }
+${(props) => props.lessMargin
+  ? `margin-right: 5px;`
+  : ``
+}
 `;
 
 export const PageContainer = styled.div`
@@ -189,19 +222,19 @@ margin: 5px;
 font-size: 1.5rem;
 border-radius: .3rem;
 ${(props) => props.dark
-  ? `border: 2px solid white;
+  ? `border: 3px solid white;
     background-color: black;
     color: white;`
-  : `border: 2px solid black;
+  : `border: 3px solid black;
     background-color: white;
     color: black;`
 }
 &:active {
-  border-width: 3px;
+  border-width: 4px;
   padding: 4px;
   ${(props) => props.dark
-  ? `background-color: #444;`
-  : `background-color: #ddd;`
+  ? `background-color: #3c4c77;`
+  : `background-color: #cdd6f0;`
     }
   }
 `;
@@ -246,11 +279,13 @@ ${(props) => props.dark
 `;
 
 export const SelectDropDown = styled.select`
+background-color: white;
+color: black;
+border-width: 2px;
+border-radius: 0%;
 ${(props) => props.dark
-  ? `background-color: black;
-    color: white;`
-  : `background-color: white;
-    color: black;`
+  ? `border-color: #3c4c77;`
+  : ``
 }
 `;
 
@@ -260,9 +295,9 @@ margin: 5px;
 font-size: 1.2rem;
 border-radius: .3rem;
 ${(props) => props.dark
-  ? `border: 2px solid ghostwhite;
+  ? `border: 2px solid #ebebeb;
     background-color: black;
-    color: white;`
+    color: #ebebeb;`
   : `border: 2px solid slategray;
     background-color: white;
     color: black;`
@@ -271,8 +306,8 @@ ${(props) => props.dark
   border-width: 3px;
   padding: 4px;
   ${(props) => props.dark
-  ? `background-color: #444;`
-  : `background-color: #ddd;`
+  ? `background-color: #3c4c77;`
+  : `background-color: #cdd6f0;`
     }
   }
 `;
@@ -303,6 +338,13 @@ font-size: 2rem;
 margin-bottom: 1.3rem;
 `;
 
+export const TrashIcon = styled(FontAwesomeIcon)`
+${(props) => props.dark
+  ? `color: #ccc;`
+  : `color: #444;`
+}
+`;
+
 export const UndoButton = styled.button`
 padding: 7px;
 margin: 3px 0;
@@ -320,8 +362,8 @@ ${(props) => props.dark
   border-width: 3px;
   padding: 4px;
   ${(props) => props.dark
-  ? `background-color: #444;`
-  : `background-color: #ddd;`
+  ? `background-color: #3c4c77;`
+  : `background-color: #cdd6f0;`
     }
   }
 `;
