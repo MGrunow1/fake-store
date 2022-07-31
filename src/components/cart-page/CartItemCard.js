@@ -1,8 +1,7 @@
 import { useContext } from "react";
 import { CartContext } from "../../contexts/CartContext";
 import { ThemeContext } from "../../contexts/ThemeContext";
-import { MediumText, ProductGridItem, SecondaryButton } from "../StyledComponents";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { MediumText, ProductGridItem, SecondaryButton, TrashIcon } from "../StyledComponents";
 import { faTrashCan } from '@fortawesome/free-solid-svg-icons';
 import QuantityWidget from "./QuantityWidget";
 
@@ -20,7 +19,9 @@ export default function CartItemCard({itemInfo}) {
                 <SecondaryButton
                   onClick={remove}
                   dark={theme === 'dark'}>
-                    <FontAwesomeIcon icon={faTrashCan} />
+                    <TrashIcon
+                     icon={faTrashCan}
+                     dark={theme === 'dark'} />
                     <MediumText>
                         Delete
                     </MediumText>

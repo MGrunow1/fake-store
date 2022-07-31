@@ -1,3 +1,4 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styled from "styled-components";
 
 export const ButtonTag = styled.div`
@@ -316,6 +317,13 @@ font-size: 16px;
 export const Title = styled.div`
 font-size: 2rem;
 margin-bottom: 1.3rem;
+`;
+
+export const TrashIcon = styled(FontAwesomeIcon)`
+${(props) => props.dark
+  ? `color: #ccc;`
+  : `color: #444;`
+}
 `;
 
 export const UndoButton = styled.button`
