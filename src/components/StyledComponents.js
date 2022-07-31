@@ -12,11 +12,11 @@ border-right-width: 0;
 border-top-width: 1px;
 border-style: solid;
 ${(props) => props.dark
-  ? `border-color: ghostwhite;
-    background-color: slategray;
-    color: white;`
-  : `border-color: slategray;
-    background-color: ghostwhite;
+  ? `border-color: #ebebeb;
+    background-color: black;
+    color: #ebebeb;`
+  : `border-color: #1c1c1c;
+    background-color: white;
     color: black;`
 }
 `;
@@ -55,8 +55,8 @@ font-size: 2rem;
 
 export const Checkbox = styled.input`
 ${(props) => props.dark
-  ? `accent-color: slategray;`
-  : `accent-color: white;`
+  ? `accent-color: #3c4c77;`
+  : `accent-color: #cdd6f0;`
 }
 `;
 
@@ -99,7 +99,7 @@ ${(props) => (props.disabled && props.dark)
   : ``
 }
 ${(props) => (props.disabled && !props.dark)
-  ? `background-color: #ccc;
+  ? `background-color: #ebebeb;
     border-color: #444`
   : ``
 }
@@ -202,19 +202,19 @@ margin: 5px;
 font-size: 1.5rem;
 border-radius: .3rem;
 ${(props) => props.dark
-  ? `border: 2px solid white;
+  ? `border: 3px solid white;
     background-color: black;
     color: white;`
-  : `border: 2px solid black;
+  : `border: 3px solid black;
     background-color: white;
     color: black;`
 }
 &:active {
-  border-width: 3px;
+  border-width: 4px;
   padding: 4px;
   ${(props) => props.dark
-  ? `background-color: #444;`
-  : `background-color: #ddd;`
+  ? `background-color: #3c4c77;`
+  : `background-color: #cdd6f0;`
     }
   }
 `;
@@ -259,11 +259,13 @@ ${(props) => props.dark
 `;
 
 export const SelectDropDown = styled.select`
+background-color: white;
+color: black;
+border-width: 2px;
+border-radius: 0%;
 ${(props) => props.dark
-  ? `background-color: black;
-    color: white;`
-  : `background-color: white;
-    color: black;`
+  ? `border-color: #3c4c77;`
+  : ``
 }
 `;
 
@@ -273,9 +275,9 @@ margin: 5px;
 font-size: 1.2rem;
 border-radius: .3rem;
 ${(props) => props.dark
-  ? `border: 2px solid ghostwhite;
+  ? `border: 2px solid #ebebeb;
     background-color: black;
-    color: white;`
+    color: #ebebeb;`
   : `border: 2px solid slategray;
     background-color: white;
     color: black;`
@@ -284,8 +286,8 @@ ${(props) => props.dark
   border-width: 3px;
   padding: 4px;
   ${(props) => props.dark
-  ? `background-color: #444;`
-  : `background-color: #ddd;`
+  ? `background-color: #3c4c77;`
+  : `background-color: #cdd6f0;`
     }
   }
 `;
@@ -333,8 +335,8 @@ ${(props) => props.dark
   border-width: 3px;
   padding: 4px;
   ${(props) => props.dark
-  ? `background-color: #444;`
-  : `background-color: #ddd;`
+  ? `background-color: #3c4c77;`
+  : `background-color: #cdd6f0;`
     }
   }
 `;

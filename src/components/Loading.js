@@ -5,7 +5,7 @@ import { Title } from "./StyledComponents";
 
 export default function Loading() {
     const { theme } = useContext(ThemeContext);
-    const clockColor = (theme === "dark") ? "white" : "black";
+    const clockColor = (theme === "dark") ? "#cdd6f0" : "#3c4c77";
     
     return (
         <Title>
