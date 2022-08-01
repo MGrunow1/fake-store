@@ -137,10 +137,28 @@ ${(props) => props.dark
 }
 `;
 
+export const HamburgerDropdownContainer = styled.div`
+position: absolute;
+top: 50px;
+width: 100%;
+text-align: left;
+${(props) => props.dark
+  ? `background-color: black;`
+  : `background-color: white;`
+}
+${(props) => props.isOpen
+  ? `display: flex;
+    flex-direction: column;`
+  : `display: none;`
+}
+@media (min-width: 450px) {
+    display: none;
+}
+`;
+
 export const HeaderContainer = styled.header`
 display: flex;
 justify-content: flex-end;
-margin-bottom: 20px;
 ${(props) => props.dark
   ? `background-color: #3c4c77;
     color: white;`
@@ -358,10 +376,7 @@ margin-bottom: 1.3rem;
 `;
 
 export const TrashIcon = styled(FontAwesomeIcon)`
-${(props) => props.dark
-  ? `color: #ccc;`
-  : `color: #444;`
-}
+color: #757575;
 `;
 
 export const UndoButton = styled.button`
