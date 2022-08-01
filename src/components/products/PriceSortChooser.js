@@ -33,18 +33,6 @@ export default function PriceSortChooser({ sortByPrice, setSortByPrice }) {
             <RadioOption>
                 <RadioButton
                     type="radio"
-                    id="descending"
-                    name="sortType"
-                    defaultChecked={sortByPrice === "descending"}
-                    onChange={setDescending}
-                    dark={theme === 'dark'} />
-                <label htmlFor="descending">
-                    Sort by descending price
-                </label>
-            </RadioOption>
-            <RadioOption>
-                <RadioButton
-                    type="radio"
                     id="ascending"
                     name="sortType"
                     defaultChecked={sortByPrice === "ascending"}
@@ -52,6 +40,18 @@ export default function PriceSortChooser({ sortByPrice, setSortByPrice }) {
                     dark={theme === 'dark'} />
                 <label htmlFor="none">
                     Sort by ascending price
+                </label>
+            </RadioOption>
+            <RadioOption>
+                <RadioButton
+                    type="radio"
+                    id="descending"
+                    name="sortType"
+                    defaultChecked={sortByPrice === "descending"}
+                    onChange={setDescending}
+                    dark={theme === 'dark'} />
+                <label htmlFor="descending">
+                    Sort by descending price
                 </label>
             </RadioOption>
         </CenteredGroup>
