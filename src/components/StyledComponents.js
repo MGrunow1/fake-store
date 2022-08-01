@@ -121,6 +121,19 @@ ${(props) => (props.disabled && !props.dark)
 }
 `;
 
+export const HamburgerButton = styled.button`
+height: 40px;
+width: 40px;
+color: white;
+font-size: 22px;
+${(props) => props.dark
+  ? `border: 2px solid white;
+    background-color: black;`
+  : `border: 1px solid black;
+    background-color: #3c4c77;`
+}
+`;
+
 export const HeaderContainer = styled.header`
 display: flex;
 justify-content: flex-end;

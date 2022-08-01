@@ -3,6 +3,7 @@ import { ThemeContext } from "../../contexts/ThemeContext";
 import { Outlet } from "react-router-dom";
 import { FooterContainer, HeaderContainer, PageContainer } from "../StyledComponents";
 import CartWidget from "./CartWidget";
+import HamburgerMenu from "./HamburgerMenu";
 import NavBar from "./NavBar";
 import ThemeSwitch from "./ThemeSwitch";
 
@@ -11,6 +12,7 @@ export default function HeaderFooter() {
     return (
         <PageContainer dark={theme === 'dark'}>
         <HeaderContainer dark={theme === 'dark'}>
+            <HamburgerMenu />
             <NavBar />
             <CartWidget />
             <ThemeSwitch />
