@@ -315,6 +315,17 @@ ${(props) => props.dark
 }
 `;
 
+export const RadioButton = styled.input`
+${(props) => props.dark
+  ? `accent-color: #cdd6f0;`
+  : `accent-color: #3c4c77;`
+}
+`;
+
+export const RadioOption = styled.div`
+margin: 0px 10px 20px 10px;
+`
+
 export const SelectDropDown = styled.select`
 background-color: white;
 color: black;

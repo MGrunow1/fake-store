@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
 import { ProductGrid } from "../StyledComponents";
 import Loading from "../Loading";
+import PriceSortChooser from "./PriceSortChooser";
 import ProductCard from "./ProductCard";
 
 export default function ProductsPage() {
   const [productList, setProductList] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [sortByPrice, setSortByPrice] = useState("none");
 
   // fetch list of products
   useEffect(() => {
@@ -22,23 +24,28 @@ export default function ProductsPage() {
   return (
     <>
       {isLoading ? (
-      <Loading />
+        <Loading />
       ) : (
-      <ProductGrid>
-        {productList ? (
-          productList.map((product, index) => (
-            <div key={index}>
-              <ProductCard
-              id = {product.id}
-               image = {product.image}
-               price = {product.price}
-               title = {product.title} />
-            </div>
-          ))
-        ) : (
-          <div>No products found.</div>
-        )}
-      </ProductGrid>
+        <>
+        <PriceSortChooser
+          sortByPrice={sortByPrice}
+          setSortByPrice={setSortByPrice} />
+        <ProductGrid>
+          {productList ? (
+            productList.map((product, index) => (
+              <div key={index}>
+                <ProductCard
+                 id = {product.id}
+                 image = {product.image}
+                 price = {product.price}
+                 title = {product.title} />
+              </div>
+           ))
+          ) : (
+            <div>No products found.</div>
+          )}
+        </ProductGrid>
+        </>
       )}
     </>
   );
