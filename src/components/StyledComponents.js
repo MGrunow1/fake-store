@@ -121,15 +121,52 @@ ${(props) => (props.disabled && !props.dark)
 }
 `;
 
+export const HamburgerButton = styled.button`
+height: 40px;
+width: 40px;
+color: white;
+font-size: 22px;
+${(props) => props.dark
+  ? `border: 2px solid white;
+    background-color: black;`
+  : `border: 1px solid black;
+    background-color: #3c4c77;`
+}
+@media (min-width: 450px) {
+    display: none;
+}
+`;
+
+export const HamburgerDropdownContainer = styled.div`
+position: absolute;
+top: 50px;
+width: 100%;
+text-align: left;
+${(props) => props.dark
+  ? `background-color: black;`
+  : `background-color: white;`
+}
+${(props) => props.isOpen
+  ? `display: flex;
+    flex-direction: column;`
+  : `display: none;`
+}
+@media (min-width: 450px) {
+    display: none;
+}
+`;
+
 export const HeaderContainer = styled.header`
 display: flex;
 justify-content: flex-end;
-margin-bottom: 20px;
 ${(props) => props.dark
   ? `background-color: #3c4c77;
     color: white;`
   : `background-color: #cdd6f0;
     color: black;`
+}
+@media (max-width: 450px) {
+    justify-content: space-between;
 }
 `;
 
@@ -184,9 +221,9 @@ font-size: 1rem;
 
 export const NavContainer = styled.div`
 display: flex;
-${(props) => props.vertical
-  ? `flex-direction: column;`
-  : `flex-direction: row;`
+flex-direction: row;
+@media (max-width: 450px) {
+    display: none;
 }
 `;
 
@@ -339,10 +376,7 @@ margin-bottom: 1.3rem;
 `;
 
 export const TrashIcon = styled(FontAwesomeIcon)`
-${(props) => props.dark
-  ? `color: #ccc;`
-  : `color: #444;`
-}
+color: #757575;
 `;
 
 export const UndoButton = styled.button`

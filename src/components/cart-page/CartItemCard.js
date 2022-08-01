@@ -20,8 +20,7 @@ export default function CartItemCard({itemInfo}) {
                   onClick={remove}
                   dark={theme === 'dark'}>
                     <TrashIcon
-                     icon={faTrashCan}
-                     dark={theme === 'dark'} />
+                     icon={faTrashCan} />
                     <MediumText>
                         Delete
                     </MediumText>
