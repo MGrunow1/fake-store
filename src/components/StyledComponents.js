@@ -132,6 +132,9 @@ ${(props) => props.dark
   : `border: 1px solid black;
     background-color: #3c4c77;`
 }
+@media (min-width: 450px) {
+    display: none;
+}
 `;
 
 export const HeaderContainer = styled.header`
@@ -143,6 +146,9 @@ ${(props) => props.dark
     color: white;`
   : `background-color: #cdd6f0;
     color: black;`
+}
+@media (max-width: 450px) {
+    justify-content: space-between;
 }
 `;
 
@@ -197,9 +203,9 @@ font-size: 1rem;
 
 export const NavContainer = styled.div`
 display: flex;
-${(props) => props.vertical
-  ? `flex-direction: column;`
-  : `flex-direction: row;`
+flex-direction: row;
+@media (max-width: 450px) {
+    display: none;
 }
 `;
 

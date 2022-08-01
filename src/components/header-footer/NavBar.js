@@ -7,7 +7,7 @@ export default function NavBar() {
     const { cart } = useContext(CartContext);
     return (
         <>
-        <NavContainer vertical={false}>
+        <NavContainer>
             <StyledNavLink
                 page="/products"
                 text="Products"
