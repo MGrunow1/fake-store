@@ -5,12 +5,12 @@ import { MediumText, ProductGridItem, SecondaryButton, TrashIcon } from "../Styl
 import { faTrashCan } from '@fortawesome/free-solid-svg-icons';
 import QuantityWidget from "./QuantityWidget";
 
-export default function CartItemCard({itemInfo}) {
+export default function CartItemCard({itemInfo: {id, name, quantity}}) {
     const { deleteFromCart } = useContext(CartContext);
     const { theme } = useContext(ThemeContext);
 
     function remove() {
-        deleteFromCart(itemInfo.id);
+        deleteFromCart(id);
     }
     
     return (
@@ -26,12 +26,12 @@ export default function CartItemCard({itemInfo}) {
                     </MediumText>
                 </SecondaryButton>
                 <MediumText>
-                    {itemInfo.name}
+                    {name}
                 </MediumText>
             </div>
             <QuantityWidget
-              id={itemInfo.id}
-              quantity={itemInfo.quantity} />
+              id={id}
+              quantity={quantity} />
         </ProductGridItem>
     )
 }
