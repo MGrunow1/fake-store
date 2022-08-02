@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { ProductGrid } from "../StyledComponents";
+import { getProductInfo, sortProductList } from "../../api/apiUtils";
 import Loading from "../Loading";
 import PriceSortChooser from "./PriceSortChooser";
 import ProductCard from "./ProductCard";
@@ -14,43 +15,18 @@ export default function ProductsPage() {
   // storage for sorted list (filling this triggers display)
   const [sortedProductList, setSortedProductList] = useState([]);
 
-  // fetch list of products
+  // fetch unsorted list of products
   useEffect(() => {
-    async function getProductList() {
-      setIsLoading(true);
-      const url = `http://fakestoreapi.com/products`;
-      const response = await fetch(url);
-      const data = await response.json();
-      // set unsorted list (sorted in another useEffect)
-      setProductList(data);
-      setIsLoading(false);
-    }
-    getProductList();
+    // id of null gets all products
+    getProductInfo(null, setIsLoading, setProductList);
     // reload list when sorting changes
   }, [sortByPrice]);
 
   // sort list of products
   useEffect(() => {
-    let sortedArray = []
-    switch(sortByPrice) {
-      case "ascending":
-        // use comparison function to find higher price
-        sortedArray = productList.sort((a, b) => a.price - b.price);
-        break;
-      case "descending":
-        // use comparison function to find lower price
-        sortedArray = productList.sort((a, b) => b.price - a.price);
-        break;
-      case "none":
-        // no sort, just copy
-        sortedArray = productList;
-        break;
-      default:
-        sortedArray = productList;
-    }
     // setting the sorted list allows display
     // (just using productList would render the products before any sorting)
-    setSortedProductList(sortedArray);
+    sortProductList(productList, setSortedProductList, sortByPrice)
   }, [productList, setSortedProductList, sortByPrice]);
 
   return (

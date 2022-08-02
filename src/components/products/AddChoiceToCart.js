@@ -12,19 +12,20 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faRotateLeft } from '@fortawesome/free-solid-svg-icons';
 
-export default function AddChoiceToCart({ info, quantity}) {
+export default function AddChoiceToCart({ id, title, price, quantity}) {
     const { theme } = useContext(ThemeContext);
     const { addToCart } = useContext(CartContext);
     const [isAdded, setIsAdded] = useState(false);
     
     function submitItem() {
-        const product = {id: info.id, name: info.title, price: info.price, quantity: quantity}
+        // create an entry to add to the cart
+        const product = {id: id, name: title, price: price, quantity: quantity}
         addToCart(product);
         setIsAdded(true);
     }
     function undoAddition() {
         // set quantity as negative to subtract
-        const reverseProduct = {id: info.id, quantity: -quantity}
+        const reverseProduct = {id: id, quantity: -quantity}
         addToCart(reverseProduct);
         setIsAdded(false);
     }
