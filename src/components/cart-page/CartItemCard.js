@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { CartContext } from "../../contexts/CartContext";
 import { ThemeContext } from "../../contexts/ThemeContext";
-import { MediumText, ProductGridItem, SecondaryButton, TrashIcon } from "../StyledComponents";
+import { GridItem, MediumText, SecondaryButton, TrashIcon } from "../StyledComponents";
 import { faTrashCan } from '@fortawesome/free-solid-svg-icons';
 import QuantityWidget from "./QuantityWidget";
 
@@ -14,7 +14,7 @@ export default function CartItemCard({itemInfo: {id, name, quantity}}) {
     }
     
     return (
-        <ProductGridItem>
+        <GridItem>
             <div style={{display: "flex"}}>
                 <SecondaryButton
                   onClick={remove}
@@ -32,6 +32,6 @@ export default function CartItemCard({itemInfo: {id, name, quantity}}) {
             <QuantityWidget
               id={id}
               quantity={quantity} />
-        </ProductGridItem>
+        </GridItem>
     )
 }

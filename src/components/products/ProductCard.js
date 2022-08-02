@@ -1,13 +1,13 @@
 import { useContext } from "react";
 import { ThemeContext } from "../../contexts/ThemeContext";
 import { Link } from "react-router-dom";
-import { PrimaryButton, ProductGridItem, SizedImage } from "../StyledComponents";
+import { GridItem, PrimaryButton, SizedImage } from "../StyledComponents";
 
 export default function ProductCard({ id, image, price, title }) {
   const { theme } = useContext(ThemeContext);
 
   return (
-    <ProductGridItem>
+    <GridItem>
       <Link to={`/products/${id}`}>
       <SizedImage
        src={image}
@@ -21,6 +21,6 @@ export default function ProductCard({ id, image, price, title }) {
           More Details
         </PrimaryButton>
       </Link>
-    </ProductGridItem>
+    </GridItem>
   );
 }
