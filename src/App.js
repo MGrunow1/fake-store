@@ -1,7 +1,7 @@
 import './App.css';
 import { CartProvider } from './contexts/CartContext';
 import { ThemeProvider } from './contexts/ThemeContext';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import CartPage  from './components/cart-page/CartPage';
 import CheckoutPage from './components/checkout/CheckoutPage';
 import HeaderFooter from './components/header-footer/HeaderFooter';
@@ -15,7 +15,7 @@ function App() {
   return (
     <ThemeProvider>
       <CartProvider>
-        <BrowserRouter>
+        <HashRouter>
           <Routes>
             <Route path="/" element={<HeaderFooter /> }>
               <Route index element={<WelcomePage />} />
@@ -30,7 +30,7 @@ function App() {
               <Route path="*" element={<NotFound />} />
             </Route>
           </Routes>
-        </BrowserRouter>
+        </HashRouter>
       </CartProvider>
     </ThemeProvider>
   );
