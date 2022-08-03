@@ -18,6 +18,8 @@ margin-bottom: 3px;
 
 export const CenteredTitle = styled.div`
 text-align: center;
+margin-left: 10px;
+margin-right: 10px;
 margin-bottom: 20px;
 font-size: 2rem;
 @media (min-width: 400px) {
