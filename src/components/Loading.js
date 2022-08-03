@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { ThemeContext } from "../contexts/ThemeContext";
 import { ClockLoader } from "react-spinners";
-import { Title } from "./StyledComponents";
+import { CenteredGroup, CenteredList, Title } from "./StyledComponents";
 
 export default function Loading() {
     const { theme } = useContext(ThemeContext);
@@ -9,10 +9,12 @@ export default function Loading() {
     
     return (
         <Title>
-            <p>Loading</p>
-            <div>
+            <CenteredList>
+                Loading
+            </CenteredList>
+            <CenteredGroup>
                 <ClockLoader color={clockColor} />
-            </div>
+            </CenteredGroup>
         </Title>
     )
 }
