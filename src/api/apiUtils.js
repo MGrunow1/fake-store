@@ -1,7 +1,7 @@
 export async function getProductInfo(id, loadingSetter, infoSetter) {
     loadingSetter(true);
     // if id is null, get all items
-    const url = (id === null) ? `http://fakestoreapi.com/products` : `http://fakestoreapi.com/products/${id}` ;
+    const url = (id === null) ? `https://fakestoreapi.com/products` : `https://fakestoreapi.com/products/${id}` ;
     const response = await fetch(url);
     const data = await response.json();
     infoSetter(data);
