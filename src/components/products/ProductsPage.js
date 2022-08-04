@@ -1,30 +1,22 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { ProductGrid } from "../StyledComponents";
 import { useGetProducts } from "../../hooks/useGetProducts";
-import { sortProductList } from "../../hooks/sortProductsList";
+import { useSortProducts } from "../../hooks/useSortProducts";
 import Loading from "../Loading";
 import PriceSortChooser from "./PriceSortChooser";
 import ProductCard from "./ProductCard";
 
 export default function ProductsPage() {
-  // initial product list (unsorted)
-  // const [productList, setProductList] = useState([]);
   // whether or not the page is loading
   const [isLoading, setIsLoading] = useState(false);
   // how to sort ("none", "ascending", "descending")
   const [sortByPrice, setSortByPrice] = useState("none");
-  // storage for sorted list (filling this triggers display)
-  const [sortedProductList, setSortedProductList] = useState([]);
 
   // fetch unsorted list of products
   const productList = useGetProducts(null, setIsLoading, sortByPrice);
 
   // sort list of products
-  useEffect(() => {
-    // setting the sorted list allows display
-    // (just using productList would render the products before any sorting)
-    sortProductList(productList, setSortedProductList, sortByPrice)
-  }, [productList, setSortedProductList, sortByPrice]);
+  const sortedProductList = useSortProducts(productList, sortByPrice);
 
   return (
     <>
