@@ -17,7 +17,7 @@ export default function ProductsPage() {
   const [sortedProductList, setSortedProductList] = useState([]);
 
   // fetch unsorted list of products
-  const productList = useGetProducts(null, setIsLoading, [sortByPrice]);
+  const productList = useGetProducts(null, setIsLoading, sortByPrice);
 
   // sort list of products
   useEffect(() => {

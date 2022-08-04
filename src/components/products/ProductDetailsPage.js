@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useParams } from "react-router-dom";
 // import { getProductInfo } from "../../api/apiUtils";
 import { useGetProducts } from "../../hooks/useGetProducts";
@@ -14,7 +14,7 @@ export default function ProductDetailsPage() {
   // useEffect(() => {
   //   getProductInfo(id, setIsLoading, setProductInfo);
   // }, [id]);
-  const productInfo = useGetProducts(null, setIsLoading, [id]);
+  const productInfo = useGetProducts(id, setIsLoading, id);
   
   return (
     <>
