@@ -5,9 +5,6 @@ const CartContext = createContext([]);
 const CartProvider = (props) => {
     const [cart, setCart] = useState([]);
     const addToCart = (newItem) => {
-        // remove any deleted items to avoid confusion
-        clearDeletedCartItems();
-        
         const itemIndex = cart.findIndex(item => item.id === newItem.id);
         // check whether cart already has some of this type
         if (itemIndex === -1) {
@@ -29,14 +26,9 @@ const CartProvider = (props) => {
     const clearCart = () => {
         setCart([]);
     }
-
-    // remove all items marked as deleted
-    const clearDeletedCartItems = () => {
-        setCart(cart.filter(item => item.isDeleted !== true));
-    }
     
     // mark item as deleted (does not remove)
-    const deleteFromCart = (itemID) => {
+    const markDeleted = (itemID) => {
         const itemIndex = cart.findIndex(item => item.id === itemID);
         // check whether the item actually is in the cart
         if(itemIndex !== -1) {
@@ -44,6 +36,11 @@ const CartProvider = (props) => {
             alteredElement.isDeleted = true;
             setCart(cart.slice(0,itemIndex).concat(alteredElement).concat(cart.slice(itemIndex + 1, cart.length)));
         }
+    }
+
+    const deleteFromCart = (itemID) => {
+        setCart(cart.filter(item => item.id !== itemID));
+        console.log(cart)
     }
 
     const changeQuantityAtIndex = (index, newQuantity) => {
@@ -58,7 +55,7 @@ const CartProvider = (props) => {
     }
 
     return (
-        <CartContext.Provider value={{cart, addToCart, deleteFromCart, changeCartItemQuantity, clearCart, clearDeletedCartItems}}>
+        <CartContext.Provider value={{cart, addToCart, deleteFromCart, changeCartItemQuantity, clearCart, markDeleted}}>
             {props.children}
         </CartContext.Provider>
     )

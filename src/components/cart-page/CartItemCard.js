@@ -6,11 +6,11 @@ import { faTrashCan } from '@fortawesome/free-solid-svg-icons';
 import QuantityWidget from "./QuantityWidget";
 
 export default function CartItemCard({itemInfo: {id, name, quantity}}) {
-    const { deleteFromCart } = useContext(CartContext);
+    const { markDeleted } = useContext(CartContext);
     const { theme } = useContext(ThemeContext);
 
     function remove() {
-        deleteFromCart(id);
+        markDeleted(id);
     }
     
     return (

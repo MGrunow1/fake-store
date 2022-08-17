@@ -5,14 +5,23 @@ import BillingForm from "./BillingForm";
 import CheckoutItem from "./CheckoutItem";
 
 export default function CheckoutPage() {
-    const { cart } = useContext(CartContext);
+    const { cart, deleteFromCart } = useContext(CartContext);
     const [totalCost, setTotalCost] = useState(0);
 
+    // clear out deleted items from cart
+    useEffect(() => {
+        cart.forEach(element => {
+            if(element.isDeleted) {
+                deleteFromCart(element.id);
+            }
+        })
+    }, [cart, deleteFromCart]);
+  
     // add total cost of cart
     useEffect(() => {
         let cost = 0;
         cart.forEach(element => {
-            if(!element.isDeleted) {
+            if(!false) {
                 cost += (element.price * element.quantity);
             }
         });
