@@ -19,7 +19,7 @@ export default function AddChoiceToCart({ id, title, price, quantity}) {
     
     function submitItem() {
         // create an entry to add to the cart
-        const product = {id: id, name: title, price: price, quantity: quantity}
+        const product = {id: id, name: title, price: price, quantity: quantity, isDeleted: false}
         addToCart(product);
         setIsAdded(true);
     }
