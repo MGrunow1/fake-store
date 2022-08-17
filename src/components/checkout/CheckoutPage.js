@@ -12,7 +12,9 @@ export default function CheckoutPage() {
     useEffect(() => {
         let cost = 0;
         cart.forEach(element => {
-            cost += (element.price * element.quantity);
+            if(!element.isDeleted) {
+                cost += (element.price * element.quantity);
+            }
         });
         setTotalCost(cost);
     }, [cart]);
