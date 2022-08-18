@@ -40,7 +40,6 @@ const CartProvider = (props) => {
 
     const deleteFromCart = (itemID) => {
         setCart(cart.filter(item => item.id !== itemID));
-        console.log(cart)
     }
 
     const changeQuantityAtIndex = (index, newQuantity) => {

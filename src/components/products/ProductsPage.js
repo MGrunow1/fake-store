@@ -1,14 +1,16 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import { CartContext } from "../../contexts/CartContext";
 import { ProductGrid } from "../StyledComponents";
 import { useGetProducts } from "../../hooks/useGetProducts";
 import { useSortProducts } from "../../hooks/useSortProducts";
+import { useRemoveDeletedItems } from "../../hooks/useRemoveDeletedItems";
 import Loading from "../Loading";
 import PriceSortChooser from "./PriceSortChooser";
 import ProductCard from "./ProductCard";
 
 export default function ProductsPage() {
   const { cart, deleteFromCart } = useContext(CartContext);
+  // const { clean } = useRemoveDeletedItems(cart, deleteFromCart);
 
   // whether or not the page is loading
   const [isLoading, setIsLoading] = useState(false);
@@ -22,13 +24,7 @@ export default function ProductsPage() {
   const sortedProductList = useSortProducts(productList, sortByPrice);
 
   // clear out deleted items from cart
-  useEffect(() => {
-    cart.forEach(element => {
-        if(element.isDeleted) {
-            deleteFromCart(element.id);
-        }
-    })
-}, [cart, deleteFromCart]);
+  useRemoveDeletedItems(cart, deleteFromCart);
 
   return (
     <>
