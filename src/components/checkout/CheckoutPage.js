@@ -1,13 +1,17 @@
 import { useContext, useEffect, useState } from "react";
 import { CartContext } from "../../contexts/CartContext";
+import { useRemoveDeletedItems } from "../../hooks/useRemoveDeletedItems";
 import { CenteredGroup, CenteredTitle} from "../StyledComponents";
 import BillingForm from "./BillingForm";
 import CheckoutItem from "./CheckoutItem";
 
 export default function CheckoutPage() {
-    const { cart } = useContext(CartContext);
+    const { cart, deleteFromCart } = useContext(CartContext);
     const [totalCost, setTotalCost] = useState(0);
 
+    // clear out deleted items from cart
+    useRemoveDeletedItems(cart, deleteFromCart);
+  
     // add total cost of cart
     useEffect(() => {
         let cost = 0;

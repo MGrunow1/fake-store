@@ -26,6 +26,28 @@ const CartProvider = (props) => {
     const clearCart = () => {
         setCart([]);
     }
+    
+    // mark item as deleted (does not remove)
+    const markDeleted = (itemID) => {
+        const itemIndex = cart.findIndex(item => item.id === itemID);
+        // check whether the item actually is in the cart
+        if(itemIndex !== -1) {
+            const alteredElement = cart[itemIndex];
+            alteredElement.isDeleted = true;
+            setCart(cart.slice(0,itemIndex).concat(alteredElement).concat(cart.slice(itemIndex + 1, cart.length)));
+        }
+    }
+
+    // unmark item that was marked for deletion
+    const undeleteItem = (itemID) => {
+        const itemIndex = cart.findIndex(item => item.id === itemID);
+        // check whether the item actually is in the cart
+        if(itemIndex !== -1) {
+            const alteredElement = cart[itemIndex];
+            alteredElement.isDeleted = false;
+            setCart(cart.slice(0,itemIndex).concat(alteredElement).concat(cart.slice(itemIndex + 1, cart.length)));
+        }
+    }
 
     const deleteFromCart = (itemID) => {
         setCart(cart.filter(item => item.id !== itemID));
@@ -43,7 +65,7 @@ const CartProvider = (props) => {
     }
 
     return (
-        <CartContext.Provider value={{cart, addToCart, deleteFromCart, changeCartItemQuantity, clearCart}}>
+        <CartContext.Provider value={{cart, addToCart, deleteFromCart, changeCartItemQuantity, clearCart, markDeleted, undeleteItem}}>
             {props.children}
         </CartContext.Provider>
     )

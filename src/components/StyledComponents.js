@@ -4,6 +4,27 @@ import styled from "styled-components";
 
 // global styled components
 
+export const ButtonTag = styled.div`
+margin: 3px 0;
+padding: 7px;
+font-size: 1rem;
+width: max-content;
+border-radius: .3rem 0 0 .3rem;
+border-bottom-width: 1px;
+border-left-width: 1px;
+border-right-width: 0;
+border-top-width: 1px;
+border-style: solid;
+${(props) => props.dark
+  ? `border-color: #ebebeb;
+    background-color: black;
+    color: #ebebeb;`
+  : `border-color: #1c1c1c;
+    background-color: white;
+    color: black;`
+}
+`;
+
 export const CenteredList = styled.div`
 display: flex;
 justify-content: center;
@@ -115,6 +136,29 @@ margin-bottom: .5rem;
 export const Title = styled.div`
 font-size: 2rem;
 margin-bottom: 1.3rem;
+`;
+
+export const UndoButton = styled.button`
+padding: 7px;
+margin: 3px 0;
+font-size: 1rem;
+border-radius: 0 .3rem .3rem 0;
+${(props) => props.dark
+  ? `border: 1px solid white;
+    background-color: black;
+    color: white;`
+  : `border: 1px solid black;
+    background-color: white;
+    color: black;`
+}
+&:active {
+  border-width: 3px;
+  padding: 4px;
+  ${(props) => props.dark
+  ? `background-color: #3c4c77;`
+  : `background-color: #cdd6f0;`
+    }
+  }
 `;
 
 
@@ -344,27 +388,6 @@ font-size: 16px;
 
 // products
 
-export const ButtonTag = styled.div`
-margin: 3px 0;
-padding: 7px;
-font-size: 1rem;
-width: max-content;
-border-radius: .3rem 0 0 .3rem;
-border-bottom-width: 1px;
-border-left-width: 1px;
-border-right-width: 0;
-border-top-width: 1px;
-border-style: solid;
-${(props) => props.dark
-  ? `border-color: #ebebeb;
-    background-color: black;
-    color: #ebebeb;`
-  : `border-color: #1c1c1c;
-    background-color: white;
-    color: black;`
-}
-`;
-
 export const InputLabel = styled.label`
 font-size: 1.2rem;
 margin-right: 10px;
@@ -410,27 +433,4 @@ margin: 0px 10px 20px 10px;
 
 export const SizedImage = styled.img`
 width: 100%;
-`;
-
-export const UndoButton = styled.button`
-padding: 7px;
-margin: 3px 0;
-font-size: 1rem;
-border-radius: 0 .3rem .3rem 0;
-${(props) => props.dark
-  ? `border: 1px solid white;
-    background-color: black;
-    color: white;`
-  : `border: 1px solid black;
-    background-color: white;
-    color: black;`
-}
-&:active {
-  border-width: 3px;
-  padding: 4px;
-  ${(props) => props.dark
-  ? `background-color: #3c4c77;`
-  : `background-color: #cdd6f0;`
-    }
-  }
 `;
