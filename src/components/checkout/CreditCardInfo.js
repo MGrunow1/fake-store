@@ -15,6 +15,7 @@ export default function CreditCardInfo({cardNumber, setCardNumber}) {
         <TextFormField
           labelID={"cardNumber"}
           labelText={"Card Number"}
+          autocomplete={"cc-number"}
           value={cardNumber}
           valueSetter={setCardNumber}
           />

@@ -29,12 +29,14 @@ export default function BillingForm() {
             <TextFormField
               labelID={"customerName"}
               labelText={"Customer Name"}
+              autocomplete={"name"}
               value={name}
               valueSetter={setName}
             />
             <TextFormField
               labelID={"shippingAddress"}
               labelText={"Shipping Address"}
+              autocomplete={"street-address"}
               value={shippingAddress}
               valueSetter={setShippingAddress}
             />
